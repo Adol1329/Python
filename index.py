@@ -5,5 +5,7 @@ fullname=input("Enter full name:")
 
 age = int(input("Enter Age:"))
 address= input ("Enter Address:")
-print(f"{fullname} {age} {address}")
+print(fullname, age, address)
+
+print(f"{fullname}, {age}, {address}")
 
