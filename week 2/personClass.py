@@ -2,16 +2,13 @@ class Person:
     def __init__(self, name, gender, age):
         self.name = name
         self.gender=gender
-        self.age=age
-        
-        
-    def __str__(self):
+        self.age=age    
+
+    def set_name(self, name):
+        self.name=name
+    def get_name(self):
         return self.name
-        return self.gender
-        return self.age
-    
         
-p1=Person("ado","male","10")
-print(p1.name)
-print(p1.gender)
-print(p1.age)
+p1 = Person("Adol", "Male", 20)
+p1.set_name("Dan")
+print(p1.get_name())
