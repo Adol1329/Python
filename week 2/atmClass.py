@@ -33,8 +33,8 @@ class Atm:
         if self.balance< amount:
             print(f"Insufficient balance {amount}")
         else:
-            self.amount> amount
-            print("You have successfully withdrawl {amount}. \n New balance{self.amount}")
+            self.amount-= amount
+            print("You have successfully withdrawl {amount}. \n New balance{self.balance}")
 
             
 atm1=Atm("Adolphe",1,4000,1234)
@@ -58,5 +58,7 @@ match option:
     case(2):
         print("withdraw")
         amount=int(input("Enter the amount to withdraw: "))
+        atm1.withdraw(amount)
+        
     case(3):
         print("Exit")       
