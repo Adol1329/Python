@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{% block title %}Student App{% endblock title %}</title>
+
+    <style>
+      /* =========================
+           GENERAL STYLES
+        ========================= */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f3f4f6;
+        color: #1f2937;
+        min-height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* =========================
+           NAVIGATION
+        ========================= */
+
+      nav {
+        background-color: #1e3a8a;
+        padding: 18px 50px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+
+        padding: 8px 14px;
+        border-radius: 6px;
+
+        transition: all 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: #2563eb;
+        color: white;
+      }
+
+      /* =========================
+           MAIN CONTENT
+        ========================= */
+
+      main {
+        flex: 1;
+        width: 100%;
+        padding: 50px 20px;
+      }
+
+      main > * {
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* =========================
+           FOOTER
+        ========================= */
+
+      .site-footer {
+        background-color: #111827;
+        color: white;
+
+        margin-top: auto;
+
+        /* Main footer border */
+        border-top: 4px solid #2563eb;
+      }
+
+      /* Footer content */
+
+      .footer-container {
+        max-width: 1100px;
+        margin: 0 auto;
+
+        padding: 45px 30px;
+
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+
+        gap: 50px;
+      }
+
+      /* Footer sections */
+
+      .footer-section {
+        padding-right: 30px;
+
+        border-right: 1px solid #374151;
+      }
+
+      .footer-section:last-child {
+        border-right: none;
+      }
+
+      /* Footer headings */
+
+      .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 18px;
+
+        color: #ffffff;
+      }
+
+      /* Footer paragraphs */
+
+      .footer-section p {
+        color: #d1d5db;
+
+        font-size: 14px;
+        line-height: 1.7;
+
+        margin-bottom: 8px;
+      }
+
+      /* Footer links */
+
+      .footer-section a {
+        display: block;
+
+        color: #d1d5db;
+
+        text-decoration: none;
+
+        font-size: 14px;
+
+        margin-bottom: 12px;
+
+        transition: all 0.3s ease;
+      }
+
+      .footer-section a:hover {
+        color: #60a5fa;
+
+        padding-left: 6px;
+      }
+
+      /* =========================
+           FOOTER BOTTOM
+        ========================= */
+
+      .footer-bottom {
+        border-top: 1px solid #374151;
+
+        background-color: #0f172a;
+
+        text-align: center;
+
+        padding: 20px;
+      }
+
+      .footer-bottom p {
+        color: #9ca3af;
+
+        font-size: 13px;
+
+        margin: 0;
+      }
+
+      /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+      @media (max-width: 768px) {
+        nav {
+          padding: 15px 20px;
+
+          flex-wrap: wrap;
+
+          gap: 10px;
+        }
+
+        nav a {
+          font-size: 14px;
+        }
+
+        .footer-container {
+          grid-template-columns: 1fr;
+
+          padding: 35px 25px;
+
+          gap: 25px;
+        }
+
+        .footer-section {
+          border-right: none;
+
+          border-bottom: 1px solid #374151;
+
+          padding-right: 0;
+
+          padding-bottom: 25px;
+        }
+
+        .footer-section:last-child {
+          border-bottom: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+      <a href="{% url 'home' %}">Home</a>
+
+      <a href="{% url 'about' %}">About</a>
+
+      <a href="{% url 'student-list' %}">Students</a>
+    </nav>
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================= -->
+
+    <main>{% block content %} {% endblock content %}</main>
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- About -->
+        <div class="footer-section">
+          <h3>Student Management System</h3>
+
+          <p>
+            A simple Django application for managing and displaying student
+            information.
+          </p>
+
+          <p>Built with Django and Python.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+
+          <a href="{% url 'home' %}"> Home </a>
+
+          <a href="{% url 'about' %}"> About </a>
+
+          <a href="{% url 'student-list' %}"> Students </a>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section">
+          <h3>Contact</h3>
+
+          <p>Email: info@example.com</p>
+
+          <p>Phone: +250 700 000 000</p>
+
+          <p>Kigali, Rwanda</p>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Student Management System. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
