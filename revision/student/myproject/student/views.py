@@ -9,3 +9,7 @@ def about(request):
 def student_list(request):
     students={'students':Student.objects.all()}
     return render(request, "student_list.html",students)
+
+
+def contact(request):
+    return render(request,"")
