@@ -41,9 +41,11 @@ INSTALLED_APPS = [
     'rest_framework',
     #APP
     'student',
-    'lecture'
-    
+    'lecture',
+    'users'
 ]
+
+AUTH_USER_MODEL = "users.User"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
