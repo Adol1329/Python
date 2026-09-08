@@ -42,10 +42,12 @@ INSTALLED_APPS = [
     #APP
     'student',
     'lecture',
-    'users'
+    'users',
+    'accounts'
 ]
 
 AUTH_USER_MODEL = "users.User"
+#AUTH_USER_MODEL = "Accounts.CreateAcc"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
